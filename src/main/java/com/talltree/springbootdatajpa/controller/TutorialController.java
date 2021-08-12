@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:8081")
 @RestController
@@ -40,7 +41,9 @@ public class TutorialController {
 
     @GetMapping("/tutorials/{id}")
     public ResponseEntity<Tutorial> getTutorialsById(@PathVariable("id") long id) {
+        Optional<Tutorial> tutorialData = tutorialRepository.findById(id);
 
+        return tutorialData.map(tutorial -> new ResponseEntity<>(tutorial, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(null, HttpStatus.NOT_FOUND));
     }
 
     @PostMapping("/tutorials")
