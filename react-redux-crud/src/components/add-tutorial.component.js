@@ -6,7 +6,7 @@ class AddTutorial extends Component {
     constructor(props) {
         super(props);
         this.onChangeTitle = this.onChangeTitle.bind(this);
-        this.OnChangeDescription = this.OnChangeDescription.bind(this);
+        this.onChangeDescription = this.onChangeDescription.bind(this);
         this.saveTutorial = this.saveTutorial.bind(this);
         this.newTutorial = this.newTutorial.bind(this);
 

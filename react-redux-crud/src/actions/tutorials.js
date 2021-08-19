@@ -6,7 +6,7 @@ import {
     DELETE_ALL_TUTORIALS
 } from "./types";
 
-import TutorialDataService from "../services/tutorials.service";
+import TutorialDataService from "../services/tutorial.service";
 
 export const createTutorial = (title, description) => async (dispatch) => {
     try {
@@ -64,7 +64,7 @@ export const deleteTutorial = (id) => async (dispatch) => {
     }
 };
 
-export const deleteAllTutorial = () => async (dispatch) => {
+export const deleteAllTutorials = () => async (dispatch) => {
     try {
         const res = await TutorialDataService.deleteAll();
 
